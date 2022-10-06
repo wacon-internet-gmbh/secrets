@@ -94,6 +94,7 @@ class SecretController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 
         //$_secret->setKunde(password_needs_rehash($_secret->getSecret(), PASSWORD_BCRYPT));
         $_secret->setSecret(openssl_encrypt($secret->getSecret(), "seed", $secret->getSecretKey()));
+        $_secret->setSecretKey("");
         return $_secret;
     }
 

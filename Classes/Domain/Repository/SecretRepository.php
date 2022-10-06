@@ -5,6 +5,11 @@ declare(strict_types=1);
 namespace Wacon\Secrets\Domain\Repository;
 
 
+use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
+use Wacon\Secrets\Domain\Model\Secret;
+
 /**
  * This file is part of the "Secrets" Extension for TYPO3 CMS.
  *
@@ -19,4 +24,12 @@ namespace Wacon\Secrets\Domain\Repository;
  */
 class SecretRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
+    public function remove($object)
+    {
+        // parent::remove($object); // TODO: Really remove the entry. Do not set it to deleted. It should be really removed out of the database
+        
+        GeneralUtility::makeInstance(ConnectionPool::class)
+            ->getConnectionForTable('tx_secrets_domain_model_secret')
+            ->delete('tx_secrets_domain_model_secret', ['uid' => $object->getUid()]);
+    }
 }
