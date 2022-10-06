@@ -1,0 +1,153 @@
+{
+    "modules": [
+        {
+            "config": {
+                "position": [
+                    157,
+                    113
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_index": false,
+                    "_default1_list": true,
+                    "_default2_show": true,
+                    "_default3_new_create": true,
+                    "_default4_edit_update": false,
+                    "_default5_delete": true,
+                    "customActions": []
+                },
+                "name": "Secret",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "1158499091107"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsNullable": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "beschreibung",
+                            "propertyType": "Text",
+                            "uid": "630298845104"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsNullable": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "kunde",
+                            "propertyType": "String",
+                            "uid": "818949179576"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsNullable": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "secret",
+                            "propertyType": "String",
+                            "uid": "1131888470037"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsNullable": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "secretKey",
+                            "propertyType": "String",
+                            "uid": "246739263275"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": []
+                }
+            }
+        }
+    ],
+    "properties": {
+        "backendModules": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "Secret => list,show,new,create,delete"
+                },
+                "description": "Show all secrets in Backend and generate new ones",
+                "key": "secret",
+                "mainModule": "tools",
+                "name": "Secret",
+                "tabLabel": "Secrets"
+            }
+        ],
+        "description": "Share secrets which are encrypted by your own webserver and not by any other third party.",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 11.5.0-11.5.99\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "generateDocumentationTemplate": true,
+            "generateEditorConfig": true,
+            "generateEmptyGitRepository": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "11.5.0-11.5.99",
+            "version": "0.0.1"
+        },
+        "extensionKey": "secrets",
+        "name": "Secrets",
+        "originalExtensionKey": "",
+        "originalVendorName": "",
+        "persons": [
+            {
+                "company": "Wacon Internet GmbH",
+                "email": "philipp.kuhlmay@wacon.de",
+                "name": "Philipp Kuhlmay",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "Secret => show",
+                    "noncacheableActions": "Secret => show"
+                },
+                "description": "Display the secret in frontend",
+                "key": "secret",
+                "name": "Secret"
+            }
+        ],
+        "vendorName": "Wacon"
+    },
+    "wires": [],
+    "storagePath": "\/var\/www\/html\/Packages\/",
+    "log": {
+        "last_modified": "2022-10-06 02:29",
+        "extension_builder_version": "v11.0.7",
+        "be_user": " (1)"
+    }
+}
