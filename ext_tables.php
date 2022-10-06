@@ -21,3 +21,4 @@ defined('TYPO3') || die();
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_secrets_domain_model_secret', 'EXT:secrets/Resources/Private/Language/locallang_csh_tx_secrets_domain_model_secret.xlf');
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_secrets_domain_model_secret');
 })();
+## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder

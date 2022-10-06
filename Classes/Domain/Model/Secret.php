@@ -31,6 +31,7 @@ class Secret extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * kunde
      *
      * @var string
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
     protected $kunde = null;
 
@@ -38,6 +39,7 @@ class Secret extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * secret
      *
      * @var string
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
     protected $secret = null;
 

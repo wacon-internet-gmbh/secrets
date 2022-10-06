@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Wacon\Secrets\Controller;
 
-
 use Wacon\Secrets\Domain\Model\Secret;
 
 /**
@@ -85,17 +84,19 @@ class SecretController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
 
     /**
      * Generates the MD5 hashed secret
+     *
      * @param Secret $secret
      * @return Secret
      */
-    private function generateMd5Hash(Secret $secret) {
+    private function generateMd5Hash(Secret $secret)
+    {
         $_secret = $secret;
 
         //$_secret->setKunde(password_needs_rehash($_secret->getSecret(), PASSWORD_BCRYPT));
-        $_secret->setSecret(openssl_encrypt($secret->getSecret(),"seed", $secret->getSecretKey()));
-
+        $_secret->setSecret(openssl_encrypt($secret->getSecret(), "seed", $secret->getSecretKey()));
         return $_secret;
     }
+
     /**
      * action delete
      *
