@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Wacon\Secrets\Controller;
 
 
+use Wacon\Secrets\Domain\Model\Secret;
+
 /**
  * This file is part of the "Secrets" Extension for TYPO3 CMS.
  *
@@ -77,10 +79,23 @@ class SecretController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControlle
     public function createAction(\Wacon\Secrets\Domain\Model\Secret $newSecret)
     {
         $this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/p/friendsoftypo3/extension-builder/master/en-us/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
-        $this->secretRepository->add($newSecret);
+        $this->secretRepository->add($this->generateMd5Hash($newSecret));
         $this->redirect('list');
     }
 
+    /**
+     * Generates the MD5 hashed secret
+     * @param Secret $secret
+     * @return Secret
+     */
+    private function generateMd5Hash(Secret $secret) {
+        $_secret = $secret;
+
+        //$_secret->setKunde(password_needs_rehash($_secret->getSecret(), PASSWORD_BCRYPT));
+        $_secret->setSecret(openssl_encrypt($secret->getSecret(),"seed", $secret->getSecretKey()));
+
+        return $_secret;
+    }
     /**
      * action delete
      *
