@@ -2,13 +2,13 @@
 
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Secrets',
-    'description' => 'Share secrets which are encrypted by your own webserver and not by any other third party.',
+    'description' => '',
     'category' => 'plugin',
-    'author' => 'Philipp Kuhlmay',
-    'author_email' => 'philipp.kuhlmay@wacon.de',
+    'author' => 'Kerstin Schmitt',
+    'author_email' => 'info@wacon.de',
     'state' => 'alpha',
     'clearCacheOnLoad' => 0,
-    'version' => '0.0.1',
+    'version' => '1.0.0',
     'constraints' => [
         'depends' => [
             'typo3' => '11.5.0-11.5.99',

@@ -3,8 +3,8 @@
         {
             "config": {
                 "position": [
-                    157,
-                    113
+                    135,
+                    126
                 ]
             },
             "name": "New Model Object",
@@ -18,7 +18,7 @@
                     "_default5_delete": true,
                     "customActions": []
                 },
-                "name": "Secret",
+                "name": "Secrets",
                 "objectsettings": {
                     "addDeletedField": true,
                     "addHiddenField": true,
@@ -30,7 +30,7 @@
                     "parentClass": "",
                     "sorting": false,
                     "type": "Entity",
-                    "uid": "1158499091107"
+                    "uid": "620237783627"
                 },
                 "propertyGroup": {
                     "properties": [
@@ -38,49 +38,13 @@
                             "allowedFileTypes": "",
                             "maxItems": "1",
                             "propertyDescription": "",
-                            "propertyIsExcludeField": true,
+                            "propertyIsExcludeField": false,
                             "propertyIsL10nModeExclude": false,
                             "propertyIsNullable": false,
                             "propertyIsRequired": false,
-                            "propertyName": "beschreibung",
-                            "propertyType": "Text",
-                            "uid": "630298845104"
-                        },
-                        {
-                            "allowedFileTypes": "",
-                            "maxItems": "1",
-                            "propertyDescription": "",
-                            "propertyIsExcludeField": true,
-                            "propertyIsL10nModeExclude": false,
-                            "propertyIsNullable": false,
-                            "propertyIsRequired": true,
-                            "propertyName": "kunde",
-                            "propertyType": "String",
-                            "uid": "818949179576"
-                        },
-                        {
-                            "allowedFileTypes": "",
-                            "maxItems": "1",
-                            "propertyDescription": "",
-                            "propertyIsExcludeField": true,
-                            "propertyIsL10nModeExclude": false,
-                            "propertyIsNullable": false,
-                            "propertyIsRequired": true,
                             "propertyName": "secret",
-                            "propertyType": "String",
-                            "uid": "1131888470037"
-                        },
-                        {
-                            "allowedFileTypes": "",
-                            "maxItems": "1",
-                            "propertyDescription": "",
-                            "propertyIsExcludeField": true,
-                            "propertyIsL10nModeExclude": false,
-                            "propertyIsNullable": false,
-                            "propertyIsRequired": false,
-                            "propertyName": "secretKey",
-                            "propertyType": "String",
-                            "uid": "246739263275"
+                            "propertyType": "Text",
+                            "uid": "407130983627"
                         }
                     ]
                 },
@@ -91,63 +55,61 @@
         }
     ],
     "properties": {
-        "backendModules": [
-            {
-                "actions": {
-                    "controllerActionCombinations": "Secret => list,show,new,create,delete"
-                },
-                "description": "Show all secrets in Backend and generate new ones",
-                "key": "secret",
-                "mainModule": "tools",
-                "name": "Secret",
-                "tabLabel": "Secrets"
-            }
-        ],
-        "description": "Share secrets which are encrypted by your own webserver and not by any other third party.",
+        "backendModules": [],
+        "description": "",
         "emConf": {
             "category": "plugin",
             "custom_category": "",
             "dependsOn": "typo3 => 11.5.0-11.5.99\n",
             "disableLocalization": false,
             "disableVersioning": false,
-            "generateDocumentationTemplate": true,
-            "generateEditorConfig": true,
+            "generateDocumentationTemplate": false,
+            "generateEditorConfig": false,
             "generateEmptyGitRepository": false,
             "sourceLanguage": "en",
             "state": "alpha",
             "targetVersion": "11.5.0-11.5.99",
-            "version": "0.0.1"
+            "version": "1.0.0"
         },
         "extensionKey": "secrets",
         "name": "Secrets",
         "originalExtensionKey": "secrets",
-        "originalVendorName": "Wacon",
+        "originalVendorName": "WACON",
         "persons": [
             {
-                "company": "Wacon Internet GmbH",
-                "email": "philipp.kuhlmay@wacon.de",
-                "name": "Philipp Kuhlmay",
+                "company": "WACON Internet GmbH",
+                "email": "info@wacon.de",
+                "name": "Kerstin Schmitt",
                 "role": "Developer"
             }
         ],
         "plugins": [
             {
                 "actions": {
-                    "controllerActionCombinations": "Secret => show",
-                    "noncacheableActions": "Secret => show"
+                    "controllerActionCombinations": "",
+                    "noncacheableActions": ""
                 },
-                "description": "Display the secret in frontend",
-                "key": "secret",
-                "name": "Secret"
+                "description": "",
+                "key": "create",
+                "name": "Create Secret "
+            },
+            {
+                "actions": {
+                    "controllerActionCombinations": "",
+                    "noncacheableActions": ""
+                },
+                "description": "",
+                "key": "show",
+                "name": "Show Secret"
             }
         ],
-        "vendorName": "Wacon"
+        "vendorName": "WACON"
     },
     "wires": [],
-    "storagePath": "\/var\/www\/html\/Packages\/",
+    "storagePath": "\/home\/www\/p660020\/html\/typo3\/typo3conf\/ext\/",
     "log": {
-        "last_modified": "2022-10-06 03:26",
-        "extension_builder_version": "v11.0.7",
+        "last_modified": "2024-01-24 08:58",
+        "extension_builder_version": "11.0.9",
         "be_user": " (1)"
     }
 }

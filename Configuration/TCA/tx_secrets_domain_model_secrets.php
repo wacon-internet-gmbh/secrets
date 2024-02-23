@@ -1,8 +1,8 @@
 <?php
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:secrets/Resources/Private/Language/locallang_db.xlf:tx_secrets_domain_model_secret',
-        'label' => 'beschreibung',
+        'title' => 'LLL:EXT:secrets/Resources/Private/Language/locallang_db.xlf:tx_secrets_domain_model_secrets',
+        'label' => 'secret',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
@@ -16,11 +16,11 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'beschreibung,kunde,secret,secret_key',
-        'iconfile' => 'EXT:secrets/Resources/Public/Icons/tx_secrets_domain_model_secret.gif'
+        'searchFields' => 'secret',
+        'iconfile' => 'EXT:secrets/Resources/Public/Icons/tx_secrets_domain_model_secrets.gif'
     ],
     'types' => [
-        '1' => ['showitem' => 'beschreibung, kunde, secret, secret_key, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, sys_language_uid, l10n_parent, l10n_diffsource, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, hidden, starttime, endtime'],
+        '1' => ['showitem' => 'secret, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, sys_language_uid, l10n_parent, l10n_diffsource, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, hidden, starttime, endtime'],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -40,8 +40,8 @@ return [
                 'items' => [
                     ['', 0],
                 ],
-                'foreign_table' => 'tx_secrets_domain_model_secret',
-                'foreign_table_where' => 'AND {#tx_secrets_domain_model_secret}.{#pid}=###CURRENT_PID### AND {#tx_secrets_domain_model_secret}.{#sys_language_uid} IN (-1,0)',
+                'foreign_table' => 'tx_secrets_domain_model_secrets',
+                'foreign_table_where' => 'AND {#tx_secrets_domain_model_secrets}.{#pid}=###CURRENT_PID### AND {#tx_secrets_domain_model_secrets}.{#sys_language_uid} IN (-1,0)',
             ],
         ],
         'l10n_diffsource' => [
@@ -94,9 +94,9 @@ return [
             ],
         ],
 
-        'beschreibung' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:secrets/Resources/Private/Language/locallang_db.xlf:tx_secrets_domain_model_secret.beschreibung',
+        'secret' => [
+            'exclude' => false,
+            'label' => 'LLL:EXT:secrets/Resources/Private/Language/locallang_db.xlf:tx_secrets_domain_model_secrets.secret',
             'config' => [
                 'type' => 'text',
                 'cols' => 40,
@@ -104,36 +104,6 @@ return [
                 'eval' => 'trim',
                 'default' => ''
             ]
-        ],
-        'kunde' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:secrets/Resources/Private/Language/locallang_db.xlf:tx_secrets_domain_model_secret.kunde',
-            'config' => [
-                'type' => 'input',
-                'size' => 30,
-                'eval' => 'trim,required',
-                'default' => ''
-            ],
-        ],
-        'secret' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:secrets/Resources/Private/Language/locallang_db.xlf:tx_secrets_domain_model_secret.secret',
-            'config' => [
-                'type' => 'input',
-                'size' => 30,
-                'eval' => 'trim,required',
-                'default' => ''
-            ],
-        ],
-        'secret_key' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:secrets/Resources/Private/Language/locallang_db.xlf:tx_secrets_domain_model_secret.secret_key',
-            'config' => [
-                'type' => 'input',
-                'size' => 30,
-                'eval' => 'trim',
-                'default' => ''
-            ],
         ],
     
     ],

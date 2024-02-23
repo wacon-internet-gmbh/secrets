@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="EXT:secrets/Resources/Private/Language/locallang.xlf" date="2022-10-06T14:29:20Z" product-name="secrets">
+	<file source-language="en" datatype="plaintext" original="EXT:secrets/Resources/Private/Language/locallang.xlf" date="2024-01-24T08:58:44Z" product-name="secrets">
 		<header/>
 		<body>
-			<trans-unit id="tx_secrets_domain_model_secret" resname="tx_secrets_domain_model_secret">
+			<trans-unit id="tx_secrets_domain_model_secrets" resname="tx_secrets_domain_model_secrets">
+				<source>Secrets</source>
+			</trans-unit>
+			<trans-unit id="tx_secrets_domain_model_secrets.secret" resname="tx_secrets_domain_model_secrets.secret">
 				<source>Secret</source>
-			</trans-unit>
-			<trans-unit id="tx_secrets_domain_model_secret.beschreibung" resname="tx_secrets_domain_model_secret.beschreibung">
-				<source>Beschreibung</source>
-			</trans-unit>
-			<trans-unit id="tx_secrets_domain_model_secret.kunde" resname="tx_secrets_domain_model_secret.kunde">
-				<source>Kunde</source>
-			</trans-unit>
-			<trans-unit id="tx_secrets_domain_model_secret.secret" resname="tx_secrets_domain_model_secret.secret">
-				<source>Secret</source>
-			</trans-unit>
-			<trans-unit id="tx_secrets_domain_model_secret.secret_key" resname="tx_secrets_domain_model_secret.secret_key">
-				<source>Secret Key</source>
 			</trans-unit>
 		</body>
 	</file>

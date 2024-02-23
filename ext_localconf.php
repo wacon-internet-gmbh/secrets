@@ -4,13 +4,25 @@ defined('TYPO3') || die();
 (static function() {
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
         'Secrets',
-        'Secret',
+        'Create',
         [
-            \Wacon\Secrets\Controller\SecretController::class => 'show'
+            \WACON\Secrets\Controller\SecretsController::class => 'new, create,list'
         ],
         // non-cacheable actions
         [
-            \Wacon\Secrets\Controller\SecretController::class => 'show'
+            \WACON\Secrets\Controller\SecretsController::class => 'create'
+        ]
+    );
+
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+        'Secrets',
+        'Show',
+        [
+            \WACON\Secrets\Controller\SecretsController::class => 'ask, show, delete'
+        ],
+        // non-cacheable actions
+        [
+            \WACON\Secrets\Controller\SecretsController::class => 'create, delete'
         ]
     );
 
@@ -19,13 +31,22 @@ defined('TYPO3') || die();
         'mod {
             wizards.newContentElement.wizardItems.plugins {
                 elements {
-                    secret {
-                        iconIdentifier = secrets-plugin-secret
-                        title = LLL:EXT:secrets/Resources/Private/Language/locallang_db.xlf:tx_secrets_secret.name
-                        description = LLL:EXT:secrets/Resources/Private/Language/locallang_db.xlf:tx_secrets_secret.description
+                    create {
+                        iconIdentifier = secrets-plugin-create
+                        title = LLL:EXT:secrets/Resources/Private/Language/locallang_db.xlf:tx_secrets_create.name
+                        description = LLL:EXT:secrets/Resources/Private/Language/locallang_db.xlf:tx_secrets_create.description
                         tt_content_defValues {
                             CType = list
-                            list_type = secrets_secret
+                            list_type = secrets_create
+                        }
+                    }
+                    show {
+                        iconIdentifier = secrets-plugin-show
+                        title = LLL:EXT:secrets/Resources/Private/Language/locallang_db.xlf:tx_secrets_show.name
+                        description = LLL:EXT:secrets/Resources/Private/Language/locallang_db.xlf:tx_secrets_show.description
+                        tt_content_defValues {
+                            CType = list
+                            list_type = secrets_show
                         }
                     }
                 }
@@ -34,4 +55,8 @@ defined('TYPO3') || die();
        }'
     );
 })();
-## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
+
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Task\TableGarbageCollectionTask::class]['options']['tables']['tx_secrets_domain_model_secrets'] = [
+    'dateField' => 'tstamp',
+    'expirePeriod' => '14',
+ ];

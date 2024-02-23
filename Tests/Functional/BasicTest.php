@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Wacon\Secrets\Tests\Functional;
+namespace WACON\Secrets\Tests\Functional;
 
 use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 
 /**
  * Test case
  *
- * @author Philipp Kuhlmay <philipp.kuhlmay@wacon.de>
+ * @author Kerstin Schmitt <info@wacon.de>
  */
 class BasicTest extends FunctionalTestCase
 {

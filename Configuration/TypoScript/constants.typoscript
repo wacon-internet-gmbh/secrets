@@ -1,29 +1,23 @@
-plugin.tx_secrets_secret {
+plugin.tx_secrets {
     view {
-        # cat=plugin.tx_secrets_secret/file; type=string; label=Path to template root (FE)
+        # cat=plugin.tx_secrets/file; type=string; label=Path to template root (FE)
         templateRootPath = EXT:secrets/Resources/Private/Templates/
-        # cat=plugin.tx_secrets_secret/file; type=string; label=Path to template partials (FE)
+        # cat=plugin.tx_secrets/file; type=string; label=Path to template partials (FE)
         partialRootPath = EXT:secrets/Resources/Private/Partials/
-        # cat=plugin.tx_secrets_secret/file; type=string; label=Path to template layouts (FE)
+        # cat=plugin.tx_secrets/file; type=string; label=Path to template layouts (FE)
         layoutRootPath = EXT:secrets/Resources/Private/Layouts/
     }
+    settings {
+        # cat=plugin.tx_secrets//a; type=string; label=Secret key
+        secretkey = QGWVZYJJCrnm2JM4bNhX
+        # cat=plugin.tx_secrets//a; type=string; label=PID Show Secret
+        showPid = 1
+
+    }
     persistence {
-        # cat=plugin.tx_secrets_secret//a; type=string; label=Default storage PID
+        # cat=plugin.tx_secrets//a; type=string; label=Default storage PID
         storagePid =
     }
 }
 
-module.tx_secrets_secret {
-    view {
-        # cat=module.tx_secrets_secret/file; type=string; label=Path to template root (BE)
-        templateRootPath = EXT:secrets/Resources/Private/Backend/Templates/
-        # cat=module.tx_secrets_secret/file; type=string; label=Path to template partials (BE)
-        partialRootPath = EXT:secrets/Resources/Private/Backend/Partials/
-        # cat=module.tx_secrets_secret/file; type=string; label=Path to template layouts (BE)
-        layoutRootPath = EXT:secrets/Resources/Private/Backend/Layouts/
-    }
-    persistence {
-        # cat=module.tx_secrets_secret//a; type=string; label=Default storage PID
-        storagePid =
-    }
-}
+

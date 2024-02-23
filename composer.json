@@ -1,10 +1,10 @@
 {
     "name": "wacon/secrets",
     "type": "typo3-cms-extension",
-    "description": "Share secrets which are encrypted by your own webserver and not by any other third party.",
+    "description": "",
     "authors": [
         {
-            "name": "Philipp Kuhlmay",
+            "name": "Kerstin Schmitt",
             "role": "Developer"
         }
     ],
@@ -17,12 +17,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Wacon\\Secrets\\": "Classes"
+            "WACON\\Secrets\\": "Classes"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Wacon\\Secrets\\Tests\\": "Tests"
+            "WACON\\Secrets\\Tests\\": "Tests"
         }
     },
     "replace": {

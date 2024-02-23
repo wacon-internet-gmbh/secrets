@@ -1,6 +1,6 @@
 #
 # Extension Builder settings for extension secrets
-# generated 2022-10-06T14:29:20Z
+# generated 2024-01-24T08:40:17Z
 #
 # See http://www.yaml.org/spec/1.2/spec.html
 #
@@ -51,25 +51,25 @@ overwriteSettings:
 
   Resources:
     Private:
-      Language: merge
-      Layouts: keep
-      Partials: keep
-      Templates: keep
+      #Language: merge
+      #Layouts: keep
+      #Partials: keep
+      #Templates: keep
       Backend:
-        Layouts: keep
-        Partials: keep
-        Templates: keep
+        #Layouts: keep
+        #Partials: keep
+        #Templates: keep
 
   user_extension.svg: keep
-  ext_localconf.php: merge
-  ext_tables.php: merge
-  ext_tables.sql: merge
+#  ext_localconf.php: merge
+#  ext_tables.php: merge
+#  ext_tables.sql: merge
 
 ## add declare strict types in php files
 declareStrictTypes: true
 
 ## use static date attribute in xliff files
-staticDateInXliffFiles: '2022-10-06T14:29:20Z'
+#staticDateInXliffFiles: '2024-01-24T08:40:17Z'
 
 ## skip docComment (license header)
 #skipDocComment: false
