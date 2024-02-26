@@ -80,7 +80,7 @@ class SecretsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
        $pid = $this->settings['createPid'] ?? '1';
        $this->view->assign('pid', $pid);
         $key2 = $this->settings['secretkey'] ?? 'default';
-$c = base64_decode($secret); 
+$c = urldecode($secret); 
 $ivlen = openssl_cipher_iv_length($cipher="AES-128-CBC"); 
 $iv = substr($c, 0, $ivlen); 
 $hmac = substr($c, $ivlen, $sha2len=32); 
@@ -133,7 +133,7 @@ if($secretdata){
         $secret = ($this->request->getQueryParams()['secretid'] ?? 0);
         //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($secret);
         $key2 = $this->settings['secretkey'] ?? 'default';
-$c = base64_decode($secret); 
+$c = urldecode($secret); 
 $ivlen = openssl_cipher_iv_length($cipher="AES-128-CBC"); 
 $iv = substr($c, 0, $ivlen); 
 $hmac = substr($c, $ivlen, $sha2len=32); 
@@ -210,7 +210,7 @@ if(hash_equals($hmac, $calcmac)){ //PHP 5.6+ Timing attack safe string compariso
         $ciphertext_raw = openssl_encrypt($id, $cipher, $key2, $options=OPENSSL_RAW_DATA, $iv); 
         $hmac = hash_hmac('sha256', $ciphertext_raw, $key2, $as_binary=true); 
  
-        $ciphertext = base64_encode($iv.$hmac.$ciphertext_raw);
+        $ciphertext = urlencode($iv.$hmac.$ciphertext_raw);
 
         $this->view->assign('secrets', $ciphertext);
         $uri = $this->uriBuilder->uriFor('list', ['show' => $ciphertext]);
