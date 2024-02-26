@@ -35,10 +35,11 @@ plugin.tx_secrets_show {
     }
     settings {
         secretkey = {$plugin.tx_secrets.settings.secretkey}
+        createPid = {$plugin.tx_secrets.settings.createPid}
     }
     persistence {
         storagePid = {$plugin.tx_secrets.persistence.storagePid}
-        createPid = {$plugin.tx_secrets.settings.createPid}
+        
     }
     features {
         #skipDefaultArguments = 1
