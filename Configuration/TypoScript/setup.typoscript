@@ -38,7 +38,7 @@ plugin.tx_secrets_show {
     }
     persistence {
         storagePid = {$plugin.tx_secrets.persistence.storagePid}
-        #recursive = 1
+        createPid = {$plugin.tx_secrets.settings.createPid}
     }
     features {
         #skipDefaultArguments = 1

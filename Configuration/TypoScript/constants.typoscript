@@ -12,6 +12,8 @@ plugin.tx_secrets {
         secretkey = QGWVZYJJCrnm2JM4bNhX
         # cat=plugin.tx_secrets//a; type=string; label=PID Show Secret
         showPid = 1
+        # cat=plugin.tx_secrets//a; type=string; label=PID Create Secret
+        createPid = 1
 
     }
     persistence {

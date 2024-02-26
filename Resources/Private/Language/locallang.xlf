@@ -7,7 +7,31 @@
 				<source>Secrets</source>
 			</trans-unit>
 			<trans-unit id="tx_secrets_domain_model_secrets.secret" resname="tx_secrets_domain_model_secrets.secret">
-				<source>Secret</source>
+				<source>Enter your text to be encrypted here</source>
+			</trans-unit>
+			<trans-unit id="tx_secrets_domain_model_secrets.encrypt" resname="tx_secrets_domain_model_secrets.encrypt">
+				<source>Generate link</source>
+			</trans-unit>
+			<trans-unit id="tx_secrets_domain_model_secrets.show" resname="tx_secrets_domain_model_secrets.show">
+				<source>The text is only available ONCE via this URL</source>
+			</trans-unit>
+			<trans-unit id="tx_secrets_domain_model_secrets.copy" resname="tx_secrets_domain_model_secrets.copy">
+				<source>Copy</source>
+			</trans-unit>
+			<trans-unit id="tx_secrets_domain_model_secrets.ask_text" resname="tx_secrets_domain_model_secrets.ask_text">
+				<source>You can now access the encrypted text. This will make the link invalid!</source>
+			</trans-unit>
+			<trans-unit id="tx_secrets_domain_model_secrets.ask_button" resname="tx_secrets_domain_model_secrets.ask_button">
+				<source>Show text</source>
+			</trans-unit>
+			<trans-unit id="tx_secrets_domain_model_secrets.done" resname="tx_secrets_domain_model_secrets.done">
+				<source>The link is now invalid!</source>
+			</trans-unit>
+			<trans-unit id="tx_secrets_domain_model_secrets.failed" resname="tx_secrets_domain_model_secrets.failed">
+				<source>Unfortunately the link was invalid!</source>
+			</trans-unit>
+			<trans-unit id="tx_secrets_domain_model_secrets.new" resname="tx_secrets_domain_model_secrets.new">
+				<source>You can encrypt a new text here!</source>
 			</trans-unit>
 		</body>
 	</file>

@@ -60,7 +60,7 @@ class SecretsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     {
         if($this->request->hasArgument('show'))$secret = $this->request->getArgument('show');
         //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($arguments);
-        $pid = $this->settings['showPid'] ?? 1;
+        $pid = $this->settings['showPid'] ?? '1';
         $this->view->assign('pid', $pid);
         $this->view->assign('secret', $secret);
         return $this->htmlResponse();
@@ -73,10 +73,12 @@ class SecretsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      */
     public function askAction(): \Psr\Http\Message\ResponseInterface
     {
-        $arguments = $this->request->getArguments();
+        //$arguments = $this->request->getArguments();
         //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($arguments);
        //if($this->request->hasArgument('secret'))$secret = $this->request->getArgument('secret');
        $secret = ($this->request->getQueryParams()['secretid'] ?? 0);
+       $pid = $this->settings['createPid'] ?? '1';
+       $this->view->assign('pid', $pid);
         $key2 = $this->settings['secretkey'] ?? 'default';
 $c = base64_decode($secret); 
 $ivlen = openssl_cipher_iv_length($cipher="AES-128-CBC"); 
@@ -91,7 +93,7 @@ if(hash_equals($hmac, $calcmac)){ //PHP 5.6+ Timing attack safe string compariso
     $uid=(int)$keyarray['0'];
     $key1=$keyarray['1'];
     $secretdata = $this->secretsRepository->findByUid($uid);
-
+if($secretdata){
     $c = base64_decode($secretdata->getSecret()); 
     $ivlen = openssl_cipher_iv_length($cipher="AES-128-CBC"); 
     $iv = substr($c, 0, $ivlen); 
@@ -106,7 +108,9 @@ if(hash_equals($hmac, $calcmac)){ //PHP 5.6+ Timing attack safe string compariso
         $this->view->assign('failed', '1');
     }
    
-    
+}else{ 
+    $this->view->assign('failed', '1');
+} 
   }else{ 
       $this->view->assign('failed', '1');
   }
@@ -122,10 +126,12 @@ if(hash_equals($hmac, $calcmac)){ //PHP 5.6+ Timing attack safe string compariso
      */
     public function showAction(): \Psr\Http\Message\ResponseInterface
     {
-        $arguments = $this->request->getArguments();
-         //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($arguments);
+        //$arguments = $this->request->getArguments();
+        $pid = $this->settings['createPid'] ?? '1';
+        $this->view->assign('pid', $pid);
         //if($this->request->hasArgument('secret'))$secret = $this->request->getArgument('secret');
         $secret = ($this->request->getQueryParams()['secretid'] ?? 0);
+        //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($secret);
         $key2 = $this->settings['secretkey'] ?? 'default';
 $c = base64_decode($secret); 
 $ivlen = openssl_cipher_iv_length($cipher="AES-128-CBC"); 
@@ -140,7 +146,8 @@ if(hash_equals($hmac, $calcmac)){ //PHP 5.6+ Timing attack safe string compariso
     $uid=(int)$keyarray['0'];
     $key1=$keyarray['1'];
     $secretdata = $this->secretsRepository->findByUid($uid);
-
+    if($secretdata){
+    //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($secretdata);
     $c = base64_decode($secretdata->getSecret()); 
     $ivlen = openssl_cipher_iv_length($cipher="AES-128-CBC"); 
     $iv = substr($c, 0, $ivlen); 
@@ -159,7 +166,9 @@ if(hash_equals($hmac, $calcmac)){ //PHP 5.6+ Timing attack safe string compariso
     
   }else{ 
       $this->view->assign('failed', '1');
-  }
+  }}else{ 
+    $this->view->assign('failed', '1');
+}
 
 
 
@@ -205,7 +214,7 @@ if(hash_equals($hmac, $calcmac)){ //PHP 5.6+ Timing attack safe string compariso
 
         $this->view->assign('secrets', $ciphertext);
         $uri = $this->uriBuilder->uriFor('list', ['show' => $ciphertext]);
-        \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($uri);
+        //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($uri);
         return $this->responseFactory->createResponse(307)
             ->withHeader('Location', $uri);
     }

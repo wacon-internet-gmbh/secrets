@@ -19,5 +19,5 @@ namespace WACON\Secrets\Domain\Repository;
  */
 class SecretsRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
-
+   
 }

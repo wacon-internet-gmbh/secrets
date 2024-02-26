@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:secrets/Resources/Private/Language/locallang.xlf" date="2024-01-24T08:58:44Z" product-name="secrets">
+		<header/>
+		<body>
+			<trans-unit id="tx_secrets_domain_model_secrets" resname="tx_secrets_domain_model_secrets" approved="yes">
+				<source>Secrets</source>
+                <target>Secrets</target>
+			</trans-unit>
+			<trans-unit id="tx_secrets_domain_model_secrets.secret" resname="tx_secrets_domain_model_secrets.secret">
+				<source>Enter your text to be encrypted here</source>
+                <target>Geben Sie hier Ihren zu verschlüsselnden Text ein:</target>
+			</trans-unit>
+            <trans-unit id="tx_secrets_domain_model_secrets.encrypt" resname="tx_secrets_domain_model_secrets.encrypt">
+				<source>Generate link</source>
+                <target>Link erzeugen</target>
+			</trans-unit>
+             <trans-unit id="tx_secrets_domain_model_secrets.show" resname="tx_secrets_domain_model_secrets.show">
+				<source>The text is only available ONCE via this URL:</source>
+                <target>Der Text ist nur EINMAL über diese URL verfügbar:</target>
+			</trans-unit>
+             <trans-unit id="tx_secrets_domain_model_secrets.copy" resname="tx_secrets_domain_model_secrets.copy">
+				<source>Copy</source>
+                <target>Kopieren</target>
+			</trans-unit>
+            <trans-unit id="tx_secrets_domain_model_secrets.ask_text" resname="tx_secrets_domain_model_secrets.ask_text">
+				<source>You can now access the encrypted text. This will make the link invalid!</source>
+                <target>Sie können nun auf den verschlüsselten Text zugreifen. Der Link wird dadurch ungültig!</target>
+			</trans-unit>
+            <trans-unit id="tx_secrets_domain_model_secrets.ask_button" resname="tx_secrets_domain_model_secrets.ask_button">
+				<source>Show text</source>
+                <target>Text anzeigen</target>
+			</trans-unit>
+            <trans-unit id="tx_secrets_domain_model_secrets.done" resname="tx_secrets_domain_model_secrets.done">
+				<source>The link is now invalid!</source>
+                <target>Der Link ist nun ungültig!</target>
+			</trans-unit>
+			<trans-unit id="tx_secrets_domain_model_secrets.failed" resname="tx_secrets_domain_model_secrets.failed">
+				<source>Unfortunately the link was invalid!</source>
+                <target>Der Link war leider ungültig!</target>
+			</trans-unit>
+            <trans-unit id="tx_secrets_domain_model_secrets.new" resname="tx_secrets_domain_model_secrets.new">
+				<source>You can encrypt a new text here!</source>
+                <target>Sie können hier eine neuen Text verschlüsseln!</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
