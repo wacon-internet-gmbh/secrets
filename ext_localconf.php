@@ -22,7 +22,7 @@ defined('TYPO3') || die();
         ],
         // non-cacheable actions
         [
-            \WACON\Secrets\Controller\SecretsController::class => 'create, delete'
+            \WACON\Secrets\Controller\SecretsController::class => 'ask, show, delete'
         ]
     );
 

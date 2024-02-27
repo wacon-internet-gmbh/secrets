@@ -43,6 +43,10 @@
 				<source>You can encrypt a new text here!</source>
                 <target>Sie können hier eine neuen Text verschlüsseln!</target>
 			</trans-unit>
+			  <trans-unit id="tx_secrets_domain_model_secrets.decrypt" resname="tx_secrets_domain_model_secrets.decrypt">
+				<source>decrypted text:</source>
+                <target>Entschlüsselter Text:</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

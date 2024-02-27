@@ -33,6 +33,9 @@
 			<trans-unit id="tx_secrets_domain_model_secrets.new" resname="tx_secrets_domain_model_secrets.new">
 				<source>You can encrypt a new text here!</source>
 			</trans-unit>
+			<trans-unit id="tx_secrets_domain_model_secrets.decrypt" resname="tx_secrets_domain_model_secrets.decrypt">
+				<source>Decrypted text:</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
