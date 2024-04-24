@@ -2,13 +2,13 @@
 defined('TYPO3') || die();
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-    'Secrets',
+    'secrets',
     'Create',
-    'Create Secret '
+    'Create Secret'
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-    'Secrets',
+    'secrets',
     'Show',
     'Show Secret'
 );

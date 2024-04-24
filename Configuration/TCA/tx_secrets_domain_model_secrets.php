@@ -12,7 +12,10 @@ return [
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'secret',
+        'searchFields' => [
+            'ignorePageTypeRestriction' => true
+        ],
+        'security' => 'secret',
         'iconfile' => 'EXT:secrets/Resources/Public/Icons/tx_secrets_domain_model_secrets.gif'
     ],
     'types' => [

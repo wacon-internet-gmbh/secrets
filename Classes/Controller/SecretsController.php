@@ -226,8 +226,7 @@ if(hash_equals($hmac, $calcmac)){ //PHP 5.6+ Timing attack safe string compariso
      */
     public function deleteAction(\WACON\Secrets\Domain\Model\Secrets $secrets)
     {
-        $this->addFlashMessage('The object was deleted. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/p/friendsoftypo3/extension-builder/master/en-us/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
-        $this->secretsRepository->remove($secrets);
+         $this->secretsRepository->remove($secrets);
         $this->redirect('list');
     }
         /**

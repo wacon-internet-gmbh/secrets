@@ -1,3 +1,3 @@
 CREATE TABLE tx_secrets_domain_model_secrets (
-	secret text NOT NULL DEFAULT ''
+	secret text,
 );

@@ -3,7 +3,7 @@ defined('TYPO3') || die();
 
 (static function() {
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-        'Secrets',
+        'secrets',
         'Create',
         [
             \WACON\Secrets\Controller\SecretsController::class => 'new, create,list'
@@ -15,7 +15,7 @@ defined('TYPO3') || die();
     );
 
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-        'Secrets',
+        'secrets',
         'Show',
         [
             \WACON\Secrets\Controller\SecretsController::class => 'ask, show, delete'
