@@ -16,7 +16,7 @@ return [
             'ignorePageTypeRestriction' => true
         ],
         'security' => 'secret',
-        'iconfile' => 'EXT:secrets/Resources/Public/Icons/tx_secrets_domain_model_secrets.gif'
+        'iconfile' => 'EXT:secrets/Resources/Public/Icons/Extension.png'
     ],
     'types' => [
         '1' => ['showitem' => 'secret, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, sys_language_uid, l10n_parent, l10n_diffsource, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, hidden, starttime, endtime'],
