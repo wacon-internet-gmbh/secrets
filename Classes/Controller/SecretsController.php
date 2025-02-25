@@ -73,48 +73,45 @@ class SecretsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      */
     public function askAction(): \Psr\Http\Message\ResponseInterface
     {
-        //$arguments = $this->request->getArguments();
-        //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($arguments);
-       //if($this->request->hasArgument('secret'))$secret = $this->request->getArgument('secret');
-       $secret = ($this->request->getQueryParams()['secretid'] ?? 0);
-       $pid = $this->settings['createPid'] ?? '1';
-       $this->view->assign('pid', $pid);
+       
+        $secret = ($this->request->getQueryParams()['secretid'] ?? 0);
+        $pid = $this->settings['createPid'] ?? '1';
+        $this->view->assign('pid', $pid);
         $key2 = $this->settings['secretkey'] ?? 'default';
-$c = base64_decode($secret); 
-$ivlen = openssl_cipher_iv_length($cipher="AES-128-CBC"); 
-$iv = substr($c, 0, $ivlen); 
-$hmac = substr($c, $ivlen, $sha2len=32); 
-$ciphertext_raw = substr($c, $ivlen+$sha2len); 
-$original_plaintext = openssl_decrypt($ciphertext_raw, $cipher, $key2, $options=OPENSSL_RAW_DATA, $iv); 
-$calcmac = hash_hmac('sha256', $ciphertext_raw, $key2, $as_binary=true); 
-if(hash_equals($hmac, $calcmac)){ //PHP 5.6+ Timing attack safe string comparison 
-    
-    $keyarray = explode('+',$original_plaintext);
-    $uid=(int)$keyarray['0'];
-    $key1=$keyarray['1'];
-    $secretdata = $this->secretsRepository->findByUid($uid);
-if($secretdata){
-    $c = base64_decode($secretdata->getSecret()); 
-    $ivlen = openssl_cipher_iv_length($cipher="AES-128-CBC"); 
-    $iv = substr($c, 0, $ivlen); 
-    $hmac = substr($c, $ivlen, $sha2len=32); 
-    $ciphertext_raw = substr($c, $ivlen+$sha2len); 
-    $original_plaintext = openssl_decrypt($ciphertext_raw, $cipher, $key1, $options=OPENSSL_RAW_DATA, $iv); 
-    $calcmac = hash_hmac('sha256', $ciphertext_raw, $key1, $as_binary=true); 
-    if(hash_equals($hmac, $calcmac)){ //PHP 5.6+ Timing attack safe string comparison 
-        
-      $this->view->assign('secret', $secret);
-    }else{ 
-        $this->view->assign('failed', '1');
-    }
-   
-}else{ 
-    $this->view->assign('failed', '1');
-} 
-  }else{ 
-      $this->view->assign('failed', '1');
-  }
-
+        $c = base64_decode($secret); 
+        $ivlen = openssl_cipher_iv_length($cipher="AES-128-CBC"); 
+        $iv = substr($c, 0, $ivlen); 
+        $hmac = substr($c, $ivlen, $sha2len=32); 
+        $ciphertext_raw = substr($c, $ivlen+$sha2len); 
+        $original_plaintext = openssl_decrypt($ciphertext_raw, $cipher, $key2, $options=OPENSSL_RAW_DATA, $iv); 
+        $calcmac = hash_hmac('sha256', $ciphertext_raw, $key2, $as_binary=true); 
+        if(hash_equals($hmac, $calcmac)){ //PHP 5.6+ Timing attack safe string comparison  
+            $keyarray = explode('+',$original_plaintext);
+            $uid=(int)$keyarray['0'];
+            $key1=$keyarray['1'];
+            $secretdata = $this->secretsRepository->findByUid($uid);
+            if($secretdata){
+                $c = base64_decode($secretdata->getSecret()); 
+                $ivlen = openssl_cipher_iv_length($cipher="AES-128-CBC"); 
+                $iv = substr($c, 0, $ivlen); 
+                $hmac = substr($c, $ivlen, $sha2len=32); 
+                $ciphertext_raw = substr($c, $ivlen+$sha2len); 
+                $original_plaintext = openssl_decrypt($ciphertext_raw, $cipher, $key1, $options=OPENSSL_RAW_DATA, $iv); 
+                $calcmac = hash_hmac('sha256', $ciphertext_raw, $key1, $as_binary=true); 
+                if(hash_equals($hmac, $calcmac)){ //PHP 5.6+ Timing attack safe string comparison  
+                    $this->view->assign('secret', $secret);
+                }
+                else{ 
+                    $this->view->assign('failed', '1');
+                }
+            }
+            else{ 
+                $this->view->assign('failed', '1');
+            } 
+        }
+        else{ 
+            $this->view->assign('failed', '1');
+        }
         return $this->htmlResponse();
     }
 
