@@ -5,8 +5,6 @@ WACON Secrets
 
 The TYPO3 extension secrets developed by us is used to encrypt messages and pass them on as a unique link. The extension is suitable for organizations that attach particular importance to security and trustworthiness. Since all communication takes place via your own web server, no third-party tools from servers whose location is unknown (GDPR) are necessary. Your own domain name in the link is more trustworthy and makes a more professional impression.
 
-Translated with DeepL.com (free version)
-
 Minimal Dependencies
 ====================
 * TYPO3 CMS 12.4 or 13.4 for Secrets 2.x
