@@ -74,7 +74,7 @@ class SecretsController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     public function askAction(): \Psr\Http\Message\ResponseInterface
     {
        
-        $secret = ($this->request->getQueryParams()['secretid'] ?? 0);
+        $secret = ($this->request->getQueryParams()['secretid'] ?? '');
         $pid = $this->settings['createPid'] ?? '1';
         $this->view->assign('pid', $pid);
         $key2 = $this->settings['secretkey'] ?? 'default';
