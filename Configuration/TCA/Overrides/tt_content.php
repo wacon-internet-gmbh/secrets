@@ -1,14 +1,23 @@
 <?php
 defined('TYPO3') || die();
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+(static function (): void {
+  ExtensionUtility::registerPlugin(
     'secrets',
     'Create',
-    'Create Secret'
-);
+    'Create Secret',
+    'secrets-plugin-create',
+    'default',
+    'Secrets is used to encrypt messages and share them as a one-time link.'
+  );
 
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+  ExtensionUtility::registerPlugin(
     'secrets',
     'Show',
-    'Show Secret'
-);
+    'Show Secret',
+    'secrets-plugin-show',
+    'default',
+    'Secrets is used to encrypt messages and share them as a one-time link.'
+  );
+})();

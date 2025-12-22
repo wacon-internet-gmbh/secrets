@@ -1,0 +1,24 @@
+mod {
+            wizards.newContentElement.wizardItems.plugins {
+                elements {
+                    create {
+                        iconIdentifier = secrets-plugin-create
+                        title = LLL:EXT:secrets/Resources/Private/Language/locallang_db.xlf:tx_secrets_create.name
+                        description = LLL:EXT:secrets/Resources/Private/Language/locallang_db.xlf:tx_secrets_create.description
+                        tt_content_defValues {
+                            CType = secrets_create
+                        }
+                    }
+                    show {
+                        iconIdentifier = secrets-plugin-show
+                        title = LLL:EXT:secrets/Resources/Private/Language/locallang_db.xlf:tx_secrets_show.name
+                        description = LLL:EXT:secrets/Resources/Private/Language/locallang_db.xlf:tx_secrets_show.description
+                        tt_content_defValues {
+                            CType = secrets_show
+                         
+                        }
+                    }
+                }
+                show = *
+            }
+       }

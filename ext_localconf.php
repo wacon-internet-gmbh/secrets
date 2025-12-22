@@ -1,59 +1,40 @@
 <?php
 defined('TYPO3') || die();
 
+use \TYPO3\CMS\Extbase\Utility\ExtensionUtility;
+use \WACON\Secrets\Controller\SecretsController;
+
 (static function() {
-    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    ExtensionUtility::configurePlugin(
         'secrets',
         'Create',
         [
-            \WACON\Secrets\Controller\SecretsController::class => 'new, create,list'
+            SecretsController::class => 'new, create,list'
         ],
         // non-cacheable actions
         [
-            \WACON\Secrets\Controller\SecretsController::class => 'create,list'
-        ]
+            SecretsController::class => 'create,list'
+        ],
+        ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
     );
 
-    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    ExtensionUtility::configurePlugin(
         'secrets',
         'Show',
         [
-            \WACON\Secrets\Controller\SecretsController::class => 'ask, show, delete'
+            SecretsController::class => 'ask, show, delete'
         ],
         // non-cacheable actions
         [
-            \WACON\Secrets\Controller\SecretsController::class => 'ask, show, delete'
-        ]
+            SecretsController::class => 'ask, show, delete',
+     
+        ],   
+        ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
     );
 
-    // wizards
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-        'mod {
-            wizards.newContentElement.wizardItems.plugins {
-                elements {
-                    create {
-                        iconIdentifier = secrets-plugin-create
-                        title = LLL:EXT:secrets/Resources/Private/Language/locallang_db.xlf:tx_secrets_create.name
-                        description = LLL:EXT:secrets/Resources/Private/Language/locallang_db.xlf:tx_secrets_create.description
-                        tt_content_defValues {
-                            CType = list
-                            list_type = secrets_create
-                        }
-                    }
-                    show {
-                        iconIdentifier = secrets-plugin-show
-                        title = LLL:EXT:secrets/Resources/Private/Language/locallang_db.xlf:tx_secrets_show.name
-                        description = LLL:EXT:secrets/Resources/Private/Language/locallang_db.xlf:tx_secrets_show.description
-                        tt_content_defValues {
-                            CType = list
-                            list_type = secrets_show
-                        }
-                    }
-                }
-                show = *
-            }
-       }'
-    );
+
+    
+
 })();
 
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TYPO3\CMS\Scheduler\Task\TableGarbageCollectionTask::class]['options']['tables']['tx_secrets_domain_model_secrets'] = [

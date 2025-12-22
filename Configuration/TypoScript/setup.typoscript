@@ -50,5 +50,7 @@ plugin.tx_secrets_show {
         #callDefaultActionIfActionCantBeResolved = 1
     }
 }
+tt_content.secrets_create.20 < plugin.tx_secrets_create
+tt_content.secrets_show.20 < plugin.tx_secrets_show
 
 
