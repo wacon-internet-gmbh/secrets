@@ -13,15 +13,9 @@ plugin.tx_secrets_create {
     }
     persistence {
         storagePid = {$plugin.tx_secrets.persistence.storagePid}
-        #recursive = 1
     }
     features {
-        #skipDefaultArguments = 1
-        # if set to 1, the enable fields are ignored in BE context
         ignoreAllEnableFieldsInBe = 0
-    }
-    mvc {
-        #callDefaultActionIfActionCantBeResolved = 1
     }
 }
 plugin.tx_secrets_show {
@@ -42,15 +36,9 @@ plugin.tx_secrets_show {
         
     }
     features {
-        #skipDefaultArguments = 1
-        # if set to 1, the enable fields are ignored in BE context
         ignoreAllEnableFieldsInBe = 0
     }
     mvc {
-        #callDefaultActionIfActionCantBeResolved = 1
     }
 }
-tt_content.secrets_create.20 < plugin.tx_secrets_create
-tt_content.secrets_show.20 < plugin.tx_secrets_show
-
 
