@@ -22,11 +22,11 @@ use \WACON\Secrets\Controller\SecretsController;
         'secrets',
         'Show',
         [
-            SecretsController::class => 'ask, show, delete'
+            SecretsController::class => 'ask, show'
         ],
         // non-cacheable actions
         [
-            SecretsController::class => 'ask, show, delete',
+            SecretsController::class => 'ask, show',
      
         ],   
         ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
